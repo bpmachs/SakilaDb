@@ -29,5 +29,8 @@ public class CountryService {
 		return c;
 	}
 	
+	public List<Object> getAllCountriesBySet(){
+		return countryRepo.getCities();
+	}
 	
 }

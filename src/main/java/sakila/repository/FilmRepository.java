@@ -4,12 +4,13 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 import sakila.model.Film;
 
 @Repository
-public interface FilmRepository extends JpaRepository<Film, Long>{
+public interface FilmRepository extends JpaRepository<Film, Long>, PagingAndSortingRepository<Film, Long>{
 	
 	@Query(value="select *from film where rental_rate < 4.00 and rental_duration < 4",nativeQuery = true)
 	public List<Film> lessThanFourFilms();
@@ -26,5 +27,6 @@ public interface FilmRepository extends JpaRepository<Film, Long>{
 	public List<Object> getGroupsByGenre();
 	
 	//public List<Object> findSpecialFeatures();
+	
 	
 }

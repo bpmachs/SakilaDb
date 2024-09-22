@@ -63,9 +63,6 @@ public class FilmController {
 		return new ResponseEntity<Film>(filmService.deleteFilm(id),HttpStatus.OK);
 	}
 	
-//	@GetMapping("/all/genre")
-//	public ResponseEntity<List<Object>> getAllGenres(){
-//		return new ResponseEntity<List<Object>>(filmService.getAllGenres(),HttpStatus.OK);
-//	}
+	
 	
 }

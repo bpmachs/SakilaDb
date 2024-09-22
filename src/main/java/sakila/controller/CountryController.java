@@ -38,5 +38,8 @@ public class CountryController {
 		return new ResponseEntity<Country>(countryService.saveCountry(country),HttpStatus.OK);
 	}
 	
-	
+	@GetMapping("/all/city")
+	public ResponseEntity<List<Object>> getAllCountriesinSet(){
+		return new ResponseEntity<List<Object>>(countryService.getAllCountriesBySet(),HttpStatus.OK);
+	}
 }
